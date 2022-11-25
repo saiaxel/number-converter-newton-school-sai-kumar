@@ -3,7 +3,6 @@ const toSelected = document.getElementById("to-select");
 const from = document.getElementById("from-input");
 const to = document.getElementById("to-input");
 const error = document.getElementById("error");
-
 let fromNS = "Binary", toNS = "Binary";
 
 fromSelected.addEventListener("change", function () {
@@ -22,7 +21,8 @@ from.addEventListener("input", function () {
 
 
 let fromValue;
-document.getElementById("convert-button").addEventListener("click", function () {
+document.getElementById("convert-button").addEventListener("click", function (e) {
+    e.preventDefault();
    switch (fromNS) {
       case "Binary":
          fromValue = from.value;
@@ -101,4 +101,3 @@ document.getElementById("convert-button").addEventListener("click", function () 
          break;
    }
 });
-
